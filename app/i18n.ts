@@ -5,7 +5,6 @@ export type Locale = (typeof locales)[number];
 export type LocalizedLocale = (typeof localizedLocales)[number];
 
 export type Translation = {
-  meta: { title: string; description: string };
   languageLabel: string;
   nav: { creators: string; clients: string; about: string; status: string };
   hero: {
@@ -54,11 +53,6 @@ export type Translation = {
 
 export const translations: Record<Locale, Translation> = {
   en: {
-    meta: {
-      title: "Furrify — The marketplace for furry creators",
-      description:
-        "Discover furry artists and fursuit makers, organize commissions, and keep every project detail in one place. Furrify is currently in early development.",
-    },
     languageLabel: "Choose language",
     nav: {
       creators: "Creators",
@@ -67,7 +61,7 @@ export const translations: Record<Locale, Translation> = {
       status: "MVP in development",
     },
     hero: {
-      eyebrow: "Founded 2026 · Early stage",
+      eyebrow: "Founded 2026 · Early-stage startup · MVP in development",
       beforeHighlight: "The marketplace built for ",
       highlight: "furry creators",
       afterHighlight: " and their clients.",
@@ -131,11 +125,6 @@ export const translations: Record<Locale, Translation> = {
     footerStatus: "Early development",
   },
   es: {
-    meta: {
-      title: "Furrify — El marketplace para creadores furry",
-      description:
-        "Descubre artistas furry y creadores de fursuits, organiza comisiones y mantén cada detalle del proyecto en un solo lugar. Furrify está en desarrollo inicial.",
-    },
     languageLabel: "Elegir idioma",
     nav: {
       creators: "Creadores",
@@ -144,7 +133,7 @@ export const translations: Record<Locale, Translation> = {
       status: "MVP en desarrollo",
     },
     hero: {
-      eyebrow: "Fundada en 2026 · Etapa inicial",
+      eyebrow: "Fundada en 2026 · Startup en etapa inicial · MVP en desarrollo",
       beforeHighlight: "El marketplace creado para ",
       highlight: "creadores furry",
       afterHighlight: " y sus clientes.",
@@ -208,11 +197,6 @@ export const translations: Record<Locale, Translation> = {
     footerStatus: "Desarrollo inicial",
   },
   pt: {
-    meta: {
-      title: "Furrify — O marketplace para criadores furry",
-      description:
-        "Encontre artistas furry e fabricantes de fursuits, organize comissões e mantenha todos os detalhes do projeto em um só lugar. A Furrify está em desenvolvimento inicial.",
-    },
     languageLabel: "Escolher idioma",
     nav: {
       creators: "Criadores",
@@ -221,7 +205,7 @@ export const translations: Record<Locale, Translation> = {
       status: "MVP em desenvolvimento",
     },
     hero: {
-      eyebrow: "Fundada em 2026 · Estágio inicial",
+      eyebrow: "Fundada em 2026 · Startup em estágio inicial · MVP em desenvolvimento",
       beforeHighlight: "O marketplace feito para ",
       highlight: "criadores furry",
       afterHighlight: " e seus clientes.",
@@ -285,11 +269,6 @@ export const translations: Record<Locale, Translation> = {
     footerStatus: "Desenvolvimento inicial",
   },
   ja: {
-    meta: {
-      title: "Furrify — ファーリークリエイターのためのマーケットプレイス",
-      description:
-        "ファーリーアーティストやファースーツ制作者を見つけ、コミッションを整理し、プロジェクトの情報を一か所で管理。Furrifyは現在、初期開発段階です。",
-    },
     languageLabel: "言語を選択",
     nav: {
       creators: "クリエイター",
@@ -298,7 +277,7 @@ export const translations: Record<Locale, Translation> = {
       status: "MVP開発中",
     },
     hero: {
-      eyebrow: "2026年創業 · アーリーステージ",
+      eyebrow: "2026年創業 · アーリーステージ・スタートアップ · MVP開発中",
       beforeHighlight: "",
       highlight: "ファーリークリエイター",
       afterHighlight: "とクライアントのためのマーケットプレイス。",

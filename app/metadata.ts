@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import type { Locale } from "./i18n";
-import { translations } from "./i18n";
+
+const description =
+  "Marketplace for furry artists, fursuit makers and their clients.";
+const openGraphDescription =
+  "The marketplace built for furry creators and their clients.";
 
 export function createMetadata(locale: Locale): Metadata {
-  const { meta } = translations[locale];
-
   return {
-    title: meta.title,
-    description: meta.description,
+    title: "Furrify",
+    description,
     applicationName: "Furrify",
     keywords: [
       "furry marketplace",
@@ -17,6 +19,12 @@ export function createMetadata(locale: Locale): Metadata {
       "creator marketplace",
     ],
     icons: { icon: "/favicon.svg" },
+    openGraph: {
+      title: "Furrify",
+      description: openGraphDescription,
+      siteName: "Furrify",
+      type: "website",
+    },
     alternates: {
       canonical: locale === "en" ? "/" : `/${locale}`,
       languages: {
