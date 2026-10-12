@@ -6,7 +6,13 @@ export type LocalizedLocale = (typeof localizedLocales)[number];
 
 export type Translation = {
   languageLabel: string;
-  nav: { creators: string; clients: string; about: string; status: string };
+  nav: {
+    creators: string;
+    clients: string;
+    research: string;
+    value: string;
+    status: string;
+  };
   hero: {
     eyebrow: string;
     beforeHighlight: string;
@@ -35,6 +41,38 @@ export type Translation = {
     problem: string;
     proposal: string;
   };
+  research: {
+    label: string;
+    heading: string;
+    description: string;
+    totalLabel: string;
+    makersLabel: string;
+    buyersLabel: string;
+    interviews: {
+      role: string;
+      context: string;
+      channel: string;
+      insight: string;
+    }[];
+  };
+  empathy: {
+    label: string;
+    heading: string;
+    description: string;
+    personas: {
+      name: string;
+      summary: string;
+      items: { label: string; text: string }[];
+    }[];
+  };
+  value: {
+    label: string;
+    heading: string;
+    description: string;
+    pillars: { number: string; title: string; text: string }[];
+    promiseLabel: string;
+    promise: string;
+  };
   ai: {
     label: string;
     headingFirst: string;
@@ -57,7 +95,8 @@ export const translations: Record<Locale, Translation> = {
     nav: {
       creators: "Creators",
       clients: "Clients",
-      about: "About",
+      research: "Research",
+      value: "Value",
       status: "MVP in development",
     },
     hero: {
@@ -101,6 +140,64 @@ export const translations: Record<Locale, Translation> = {
       proposal:
         "Furrify is being built to bring discovery, portfolios, requests, communication, project tracking, payments and history together.",
     },
+    research: {
+      label: "User research",
+      heading: "Eight conversations. One fragmented process.",
+      description:
+        "We spoke with makers and experienced buyers to understand how commissions are discovered, agreed, paid for and delivered.",
+      totalLabel: "interviews",
+      makersLabel: "makers",
+      buyersLabel: "buyers",
+      interviews: [
+        { role: "Maker 01", context: "2 years making fursuits", channel: "Facebook · Instagram · X", insight: "Needs a single, simple catalog for work, materials, policies and examples." },
+        { role: "Maker 02", context: "8–9 years of experience", channel: "Facebook · conventions · referrals", insight: "Late payments affect daily operations and access to professional equipment." },
+        { role: "Maker 03", context: "Active since 2013", channel: "Facebook · Instagram · X", insight: "International work makes communication, logistics and payment records essential." },
+        { role: "Maker 04", context: "12 years making fursuits", channel: "Word of mouth · Instagram · Facebook", insight: "AI-generated references are often inconsistent; managing several suits, extra costs and payment options requires clarity." },
+        { role: "Buyer 01", context: "Mostly commissions art", channel: "X · Discord · Facebook", insight: "Wants delivery estimates, revision rules, payment options and queue position before paying." },
+        { role: "Buyer 02", context: "Furhead, apparel and collectibles", channel: "Groups · Telegram · referrals", insight: "Looks for verified reviews, clear packages and terms that prevent surprise costs." },
+        { role: "Buyer 03", context: "Commissions art", channel: "Facebook", insight: "Values direct contact, steady communication and clarity around correction fees." },
+        { role: "Buyer 04", context: "Digital art, YCHs and custom figures", channel: "Facebook · Instagram", insight: "Prefers split payments after bad experiences and wants visible work-in-progress updates." },
+      ],
+    },
+    empathy: {
+      label: "Empathy map",
+      heading: "Two sides of the same commission.",
+      description: "The interviews reveal different pressures, but a shared need for clarity and trust.",
+      personas: [
+        {
+          name: "Maker or established studio",
+          summary: "Wants to protect their time, income and client trust while producing quality work.",
+          items: [
+            { label: "Thinks & feels", text: "Income is variable; late payments and misunderstandings put the business at risk." },
+            { label: "Sees & hears", text: "Social networks, referrals, international clients and inconsistent AI-generated references." },
+            { label: "Says & does", text: "Publishes across several channels, explains the process and resolves logistics manually." },
+            { label: "Needs", text: "A clear catalog, production planning, payment options and a lasting conversation history." },
+          ],
+        },
+        {
+          name: "Experienced buyer",
+          summary: "Wants the right style and a fair price without losing visibility or peace of mind.",
+          items: [
+            { label: "Thinks & feels", text: "Communication can cause anxiety; silence and delays quickly erode trust." },
+            { label: "Sees & hears", text: "Scattered portfolios, offers, waitlists, recommendations and stories of bad experiences." },
+            { label: "Says & does", text: "Compares style, price and reputation, sends references and asks about revisions." },
+            { label: "Needs", text: "Clear prices and terms, verified reviews, delivery estimates and visible progress." },
+          ],
+        },
+      ],
+    },
+    value: {
+      label: "Value proposition",
+      heading: "From scattered messages to a commission everyone can follow.",
+      description: "Furrify brings the information, agreement and progress of a commission into one shared workspace—without taking the creator out of the work.",
+      pillars: [
+        { number: "01", title: "Discover with confidence", text: "Compare portfolios, styles, prices, availability and verified reputation in one place." },
+        { number: "02", title: "Agree before paying", text: "Validate references and make scope, materials, revisions, delivery estimates, terms and payment stages explicit." },
+        { number: "03", title: "Follow without friction", text: "Keep messages, references, work-in-progress updates, payments and decisions attached to the project." },
+      ],
+      promiseLabel: "Core promise",
+      promise: "More certainty for buyers. More control for creators. Better commissions for both.",
+    },
     ai: {
       label: "AI-assisted workflows",
       headingFirst: "Less admin.",
@@ -129,7 +226,8 @@ export const translations: Record<Locale, Translation> = {
     nav: {
       creators: "Creadores",
       clients: "Clientes",
-      about: "Acerca de",
+      research: "Entrevistas",
+      value: "Propuesta",
       status: "MVP en desarrollo",
     },
     hero: {
@@ -173,6 +271,64 @@ export const translations: Record<Locale, Translation> = {
       proposal:
         "Furrify se está creando para reunir descubrimiento, portafolios, solicitudes, comunicación, seguimiento, pagos e historial.",
     },
+    research: {
+      label: "Investigación con usuarios",
+      heading: "Ocho conversaciones. Un proceso fragmentado.",
+      description:
+        "Hablamos con makers y compradores con experiencia para entender cómo descubren, acuerdan, pagan y dan seguimiento a una comisión.",
+      totalLabel: "entrevistas",
+      makersLabel: "makers",
+      buyersLabel: "compradores",
+      interviews: [
+        { role: "Maker 01", context: "2 años haciendo fursuits", channel: "Facebook · Instagram · X", insight: "Necesita un catálogo único y simple con trabajos, materiales, reglas y ejemplos." },
+        { role: "Maker 02", context: "8–9 años de experiencia", channel: "Facebook · convenciones · recomendaciones", insight: "Los pagos tardíos afectan la operación diaria y el acceso a equipo profesional." },
+        { role: "Maker 03", context: "En actividad desde 2013", channel: "Facebook · Instagram · X", insight: "El trabajo internacional vuelve esenciales la comunicación, la logística y el historial de pagos." },
+        { role: "Maker 04", context: "12 años haciendo fursuits", channel: "Voz a voz · Instagram · Facebook", insight: "Las referencias generadas con IA suelen ser inconsistentes; coordinar varios trajes, costos extra y pagos exige claridad." },
+        { role: "Comprador 01", context: "Compra principalmente arte", channel: "X · Discord · Facebook", insight: "Quiere conocer tiempos, revisiones, forma de pago y posición en la fila antes de pagar." },
+        { role: "Comprador 02", context: "Furhead, ropa y coleccionables", channel: "Grupos · Telegram · recomendaciones", insight: "Busca reseñas verificadas, paquetes claros y condiciones que eviten costos sorpresa." },
+        { role: "Comprador 03", context: "Compra arte por comisión", channel: "Facebook", insight: "Valora el contacto directo, la comunicación constante y saber cuánto cuestan las correcciones." },
+        { role: "Comprador 04", context: "Arte digital, YCH y figuras custom", channel: "Facebook · Instagram", insight: "Prefiere pagos parciales tras malas experiencias y quiere avances visibles del trabajo." },
+      ],
+    },
+    empathy: {
+      label: "Mapa de empatía",
+      heading: "Dos lados de una misma comisión.",
+      description: "Las entrevistas revelan presiones distintas, pero una necesidad compartida: claridad y confianza.",
+      personas: [
+        {
+          name: "Maker o taller con trayectoria",
+          summary: "Busca proteger su tiempo, sus ingresos y la confianza del cliente mientras entrega trabajo de calidad.",
+          items: [
+            { label: "Piensa y siente", text: "Los ingresos son variables; los pagos tardíos y malos entendidos ponen en riesgo el negocio." },
+            { label: "Ve y oye", text: "Redes sociales, recomendaciones, clientes internacionales y referencias de IA inconsistentes." },
+            { label: "Dice y hace", text: "Publica en varios canales, explica su proceso y resuelve la logística de forma manual." },
+            { label: "Necesita", text: "Catálogo claro, planeación de producción, opciones de pago e historial de conversación." },
+          ],
+        },
+        {
+          name: "Comprador con experiencia",
+          summary: "Busca el estilo correcto y un precio justo sin perder visibilidad ni tranquilidad.",
+          items: [
+            { label: "Piensa y siente", text: "Comunicarse puede causar ansiedad; el silencio y los retrasos desgastan la confianza." },
+            { label: "Ve y oye", text: "Portafolios dispersos, ofertas, listas de espera, recomendaciones y relatos de malas experiencias." },
+            { label: "Dice y hace", text: "Compara estilo, precio y reputación, entrega referencias y pregunta por revisiones." },
+            { label: "Necesita", text: "Precios y condiciones claras, reseñas verificadas, tiempos estimados y avances visibles." },
+          ],
+        },
+      ],
+    },
+    value: {
+      label: "Propuesta de valor",
+      heading: "De mensajes dispersos a una comisión que todos pueden seguir.",
+      description: "Furrify reúne la información, los acuerdos y el progreso de cada comisión en un espacio compartido, sin sacar al creador del trabajo.",
+      pillars: [
+        { number: "01", title: "Descubrir con confianza", text: "Compara portafolios, estilos, precios, disponibilidad y reputación verificada en un solo lugar." },
+        { number: "02", title: "Acordar antes de pagar", text: "Valida las referencias y deja claros el alcance, materiales, revisiones, tiempos, condiciones y etapas de pago." },
+        { number: "03", title: "Seguir sin fricción", text: "Mantén mensajes, referencias, avances, pagos y decisiones unidos al proyecto." },
+      ],
+      promiseLabel: "Promesa central",
+      promise: "Más certeza para compradores. Más control para creadores. Mejores comisiones para ambos.",
+    },
     ai: {
       label: "Flujos asistidos por IA",
       headingFirst: "Menos gestión.",
@@ -201,7 +357,8 @@ export const translations: Record<Locale, Translation> = {
     nav: {
       creators: "Criadores",
       clients: "Clientes",
-      about: "Sobre",
+      research: "Entrevistas",
+      value: "Proposta",
       status: "MVP em desenvolvimento",
     },
     hero: {
@@ -245,6 +402,55 @@ export const translations: Record<Locale, Translation> = {
       proposal:
         "A Furrify está sendo criada para reunir descoberta, portfólios, pedidos, comunicação, acompanhamento, pagamentos e histórico.",
     },
+    research: {
+      label: "Pesquisa com usuários",
+      heading: "Oito conversas. Um processo fragmentado.",
+      description: "Conversamos com makers e compradores experientes para entender como descobrem, combinam, pagam e acompanham uma comissão.",
+      totalLabel: "entrevistas",
+      makersLabel: "makers",
+      buyersLabel: "compradores",
+      interviews: [
+        { role: "Maker 01", context: "2 anos fazendo fursuits", channel: "Facebook · Instagram · X", insight: "Precisa de um catálogo único e simples com trabalhos, materiais, regras e exemplos." },
+        { role: "Maker 02", context: "8–9 anos de experiência", channel: "Facebook · convenções · indicações", insight: "Pagamentos atrasados afetam a operação diária e o acesso a equipamentos profissionais." },
+        { role: "Maker 03", context: "Em atividade desde 2013", channel: "Facebook · Instagram · X", insight: "O trabalho internacional torna essenciais a comunicação, a logística e o histórico de pagamentos." },
+        { role: "Maker 04", context: "12 anos fazendo fursuits", channel: "Boca a boca · Instagram · Facebook", insight: "Referências geradas por IA costumam ser inconsistentes; coordenar vários trajes, custos extras e pagamentos exige clareza." },
+        { role: "Comprador 01", context: "Compra principalmente arte", channel: "X · Discord · Facebook", insight: "Quer prazos, regras de revisão, forma de pagamento e posição na fila antes de pagar." },
+        { role: "Comprador 02", context: "Furhead, roupas e colecionáveis", channel: "Grupos · Telegram · indicações", insight: "Busca avaliações verificadas, pacotes claros e condições sem custos surpresa." },
+        { role: "Comprador 03", context: "Compra arte por comissão", channel: "Facebook", insight: "Valoriza contato direto, comunicação constante e clareza sobre custos de correções." },
+        { role: "Comprador 04", context: "Arte digital, YCHs e figuras custom", channel: "Facebook · Instagram", insight: "Prefere pagamentos parciais após experiências ruins e quer atualizações visíveis." },
+      ],
+    },
+    empathy: {
+      label: "Mapa de empatia",
+      heading: "Dois lados da mesma comissão.",
+      description: "As entrevistas revelam pressões diferentes, mas uma necessidade compartilhada: clareza e confiança.",
+      personas: [
+        { name: "Maker ou ateliê experiente", summary: "Quer proteger tempo, renda e confiança do cliente enquanto entrega qualidade.", items: [
+          { label: "Pensa e sente", text: "A renda varia; atrasos e mal-entendidos colocam o negócio em risco." },
+          { label: "Vê e ouve", text: "Redes sociais, indicações, clientes internacionais e referências de IA inconsistentes." },
+          { label: "Diz e faz", text: "Publica em vários canais, explica o processo e resolve a logística manualmente." },
+          { label: "Precisa", text: "Catálogo claro, planejamento da produção, opções de pagamento e histórico de conversas." },
+        ]},
+        { name: "Comprador experiente", summary: "Quer o estilo certo e um preço justo sem perder visibilidade ou tranquilidade.", items: [
+          { label: "Pensa e sente", text: "A comunicação pode causar ansiedade; silêncio e atrasos desgastam a confiança." },
+          { label: "Vê e ouve", text: "Portfólios dispersos, ofertas, filas, recomendações e relatos de experiências ruins." },
+          { label: "Diz e faz", text: "Compara estilo, preço e reputação, envia referências e pergunta sobre revisões." },
+          { label: "Precisa", text: "Preços e condições claros, avaliações verificadas, prazos e progresso visível." },
+        ]},
+      ],
+    },
+    value: {
+      label: "Proposta de valor",
+      heading: "De mensagens dispersas a uma comissão que todos podem acompanhar.",
+      description: "A Furrify reúne informações, acordos e progresso em um espaço compartilhado, sem tirar o criador do trabalho.",
+      pillars: [
+        { number: "01", title: "Descobrir com confiança", text: "Compare portfólios, estilos, preços, disponibilidade e reputação verificada." },
+        { number: "02", title: "Combinar antes de pagar", text: "Valide as referências e deixe claros escopo, materiais, revisões, prazos, condições e etapas de pagamento." },
+        { number: "03", title: "Acompanhar sem atrito", text: "Mantenha mensagens, referências, atualizações, pagamentos e decisões junto ao projeto." },
+      ],
+      promiseLabel: "Promessa central",
+      promise: "Mais certeza para compradores. Mais controle para criadores. Melhores comissões para ambos.",
+    },
     ai: {
       label: "Fluxos assistidos por IA",
       headingFirst: "Menos gestão.",
@@ -273,7 +479,8 @@ export const translations: Record<Locale, Translation> = {
     nav: {
       creators: "クリエイター",
       clients: "クライアント",
-      about: "Furrifyについて",
+      research: "インタビュー",
+      value: "提供価値",
       status: "MVP開発中",
     },
     hero: {
@@ -316,6 +523,55 @@ export const translations: Record<Locale, Translation> = {
         "現在のコミッション制作は、SNS、メッセージアプリ、決済サービスなど、複数の場所に分散しています。",
       proposal:
         "Furrifyは、クリエイター探し、ポートフォリオ、依頼、連絡、進捗管理、支払い、履歴を一か所にまとめるために開発されています。",
+    },
+    research: {
+      label: "ユーザーリサーチ",
+      heading: "8つの対話から見えた、分散した制作プロセス。",
+      description: "メイカーと購入経験者へのインタビューを通じて、依頼の発見・合意・支払い・納品までを調査しました。",
+      totalLabel: "インタビュー",
+      makersLabel: "メイカー",
+      buyersLabel: "購入者",
+      interviews: [
+        { role: "メイカー 01", context: "ファースーツ制作歴2年", channel: "Facebook · Instagram · X", insight: "作品、素材、規約、実例を一つにまとめたシンプルなカタログを必要としている。" },
+        { role: "メイカー 02", context: "制作歴8〜9年", channel: "Facebook · イベント · 紹介", insight: "支払いの遅れは日々の運営や専門機材への投資に影響する。" },
+        { role: "メイカー 03", context: "2013年から活動", channel: "Facebook · Instagram · X", insight: "海外案件では連絡、物流、支払い履歴の管理が不可欠。" },
+        { role: "メイカー 04", context: "ファースーツ制作歴12年", channel: "口コミ · Instagram · Facebook", insight: "AI生成の資料は一貫性に欠けやすく、複数の制作、追加費用、支払い方法の明確な管理が必要。" },
+        { role: "購入者 01", context: "主にアートを依頼", channel: "X · Discord · Facebook", insight: "支払い前に納期、修正条件、支払い方法、待ち順を知りたい。" },
+        { role: "購入者 02", context: "ファーヘッド、衣類、グッズ", channel: "グループ · Telegram · 紹介", insight: "確認済みレビュー、明確なプラン、追加費用のない条件を重視する。" },
+        { role: "購入者 03", context: "コミッションアートを購入", channel: "Facebook", insight: "直接連絡でき、継続的な進捗連絡と修正費用が明確であることを重視。" },
+        { role: "購入者 04", context: "デジタルアート、YCH、カスタムフィギュア", channel: "Facebook · Instagram", insight: "過去の経験から分割払いと、見える進捗更新を求めている。" },
+      ],
+    },
+    empathy: {
+      label: "共感マップ",
+      heading: "同じコミッションを見つめる二つの立場。",
+      description: "抱える負担は異なっても、双方が求めるのは明確さと信頼です。",
+      personas: [
+        { name: "経験のあるメイカー／スタジオ", summary: "品質を守りながら、時間、収入、顧客からの信頼も守りたい。", items: [
+          { label: "考え・感じる", text: "収入は不安定で、支払い遅延や認識違いが事業のリスクになる。" },
+          { label: "見聞きする", text: "SNS、紹介、海外顧客、一貫性のないAI生成資料。" },
+          { label: "言動", text: "複数の場所で発信し、工程を説明し、物流を手作業で調整する。" },
+          { label: "必要なもの", text: "明確なカタログ、制作計画、支払い方法、会話履歴。" },
+        ]},
+        { name: "購入経験のあるクライアント", summary: "好みのスタイルと適正価格を選び、安心して完成を待ちたい。", items: [
+          { label: "考え・感じる", text: "連絡には不安が伴い、沈黙や遅延は信頼を急速に損なう。" },
+          { label: "見聞きする", text: "点在する作品、価格、待ち順、口コミ、悪い体験談。" },
+          { label: "言動", text: "作風、価格、評判を比較し、資料を送り、修正について確認する。" },
+          { label: "必要なもの", text: "明確な価格と条件、確認済みレビュー、納期目安、見える進捗。" },
+        ]},
+      ],
+    },
+    value: {
+      label: "提供価値",
+      heading: "散らばったメッセージを、誰もが追える制作プロセスへ。",
+      description: "Furrifyは依頼の情報、合意、進捗を一つの共有スペースにまとめ、クリエイター主体の制作を支えます。",
+      pillars: [
+        { number: "01", title: "安心して見つける", text: "作品、作風、価格、受付状況、確認済みの評判を一か所で比較。" },
+        { number: "02", title: "支払い前に合意する", text: "資料を確認し、範囲、素材、修正、納期、条件、支払い段階を明確に。" },
+        { number: "03", title: "負担なく追跡する", text: "会話、資料、進捗、支払い、決定事項をプロジェクトに集約。" },
+      ],
+      promiseLabel: "中心となる約束",
+      promise: "購入者に確かな安心を。クリエイターに確かな管理を。双方により良いコミッションを。",
     },
     ai: {
       label: "AIアシスト機能",

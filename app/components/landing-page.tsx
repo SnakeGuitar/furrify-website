@@ -79,7 +79,8 @@ export function LandingPage({ locale }: { locale: Locale }) {
         <div className="nav-links">
           <a href="#creators">{t.nav.creators}</a>
           <a href="#clients">{t.nav.clients}</a>
-          <a href="#about">{t.nav.about}</a>
+          <a href="#research">{t.nav.research}</a>
+          <a href="#value">{t.nav.value}</a>
         </div>
 
         <div className="nav-actions">
@@ -156,9 +157,92 @@ export function LandingPage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
+      <section className="research shell" id="research">
+        <div className="research-heading">
+          <div>
+            <div className="section-label"><span>04</span><p>{t.research.label}</p></div>
+            <h2>{t.research.heading}</h2>
+          </div>
+          <p>{t.research.description}</p>
+        </div>
+
+        <dl className="research-stats" aria-label={t.research.label}>
+          <div><dt>08</dt><dd>{t.research.totalLabel}</dd></div>
+          <div><dt>04</dt><dd>{t.research.makersLabel}</dd></div>
+          <div><dt>04</dt><dd>{t.research.buyersLabel}</dd></div>
+        </dl>
+
+        <div className="interview-grid">
+          {t.research.interviews.map((interview, index) => (
+            <article className="interview-card" key={interview.role}>
+              <div className="interview-meta">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <p>{interview.role}</p>
+              </div>
+              <p className="interview-context">{interview.context}</p>
+              <p className="interview-channel">{interview.channel}</p>
+              <p className="interview-insight">{interview.insight}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="empathy shell" id="empathy">
+        <div className="empathy-intro">
+          <div className="section-label"><span>05</span><p>{t.empathy.label}</p></div>
+          <h2>{t.empathy.heading}</h2>
+          <p>{t.empathy.description}</p>
+        </div>
+
+        <div className="persona-grid">
+          {t.empathy.personas.map((persona, personaIndex) => (
+            <article className={`persona-card persona-${personaIndex + 1}`} key={persona.name}>
+              <header>
+                <span>0{personaIndex + 1}</span>
+                <div>
+                  <h3>{persona.name}</h3>
+                  <p>{persona.summary}</p>
+                </div>
+              </header>
+              <div className="empathy-map">
+                {persona.items.map((item) => (
+                  <div className="empathy-cell" key={item.label}>
+                    <h4>{item.label}</h4>
+                    <p>{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="value-section shell" id="value">
+        <div className="value-heading">
+          <div className="section-label"><span>06</span><p>{t.value.label}</p></div>
+          <h2>{t.value.heading}</h2>
+          <p>{t.value.description}</p>
+        </div>
+
+        <div className="value-pillars">
+          {t.value.pillars.map((pillar) => (
+            <article key={pillar.number}>
+              <span>{pillar.number}</span>
+              <h3>{pillar.title}</h3>
+              <p>{pillar.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="value-promise">
+          <p>{t.value.promiseLabel}</p>
+          <h3>{t.value.promise}</h3>
+        </div>
+      </section>
+
       <section className="ai-section shell">
         <div className="ai-heading">
-          <div className="section-label"><span>04</span><p>{t.ai.label}</p></div>
+          <div className="section-label"><span>07</span><p>{t.ai.label}</p></div>
           <h2>{t.ai.headingFirst}<br />{t.ai.headingSecond}</h2>
           <p>{t.ai.description}</p>
         </div>
